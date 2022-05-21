@@ -2,7 +2,8 @@
 
 # VIM:
 mkdir -p "${HOME}/.vim/"
-ln -sf "${HOME}/repos/conf/vim/colors" "${HOME}/.vim/colors"
+
+cp -r "${HOME}/repos/conf/vim/colors" "${HOME}/.vim/"
 ln -sf "${HOME}/repos/conf/.vimrc" "${HOME}/.vimrc"
 
 
