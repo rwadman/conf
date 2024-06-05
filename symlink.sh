@@ -9,5 +9,5 @@ ln -sf "${HOME}/repos/conf/.vimrc" "${HOME}/.vimrc"
 
 
 # VSCode: (not same path on mac)
-# ln -sf "${HOME}/repos/conf/vscode/settings.json" "${HOME}/.config/Code/User/settings.json"
-# ln -sf "${HOME}/repos/conf/vscode/keybindings.json" "${HOME}/.config/Code/User/keybindings.json"
+ln -sf "${HOME}/repos/conf/vscode/settings.json" "${HOME}/.config/Code/User/settings.json"
+ln -sf "${HOME}/repos/conf/vscode/keybindings.json" "${HOME}/.config/Code/User/keybindings.json"

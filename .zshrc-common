@@ -2,11 +2,15 @@
 # Preferred editor for local and remote sessions
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-alias mpsh="source ~/repos/mappster/.venv/bin/activate"
-alias bmaps="mpsh && cd ~/repos/apm/map_folder"
-alias mp="mpsh && cd ~/repos/mappster"
-alias volvovpn='sudo openconnect --protocol=nc -u a337521 --authgroup=SMS-OTP -s /home/a337521/.config/volvo-vpn-hosts --no-dtls scs-emea.volvo.com --background'
+export MAPPSTER_GIT_TOP="$HOME/repos/mappster"
+export BMAPS_GIT_TOP="$APM_GIT_TOP/map_folder"
+export SITE_CONFIG_GIT_TOP="$HOME/repos/site-configurations"
+alias mpsh="source $MAPPSTER_GIT_TOP/.venv/bin/activate"
+alias bmaps="mpsh && cd $BMAPS_GIT_TOP"
+alias mp="mpsh && cd $MAPPSTER_GIT_TOP"
+alias scf="cd $SITE_CONFIG_GIT_TOP"
+alias scfd="cd $SITE_CONFIG_GIT_TOP && cienv start_docker"
+alias volvovpn='2>/dev/null sudo openconnect --protocol=nc -u a337521 --authgroup=SMS-OTP -s /home/rikard/.config/volvo-vpn-hosts --no-dtls scs-emea.volvo.com --background'
 alias novpn='sudo killall openconnect'
 
 # ----------------------
@@ -40,3 +44,18 @@ alias gst='git stash'
 # ----------------------
 # Git log find by commit message
 function glf() { git log --all --grep="$1"; }
+
+
+# -----------------------
+# Kubectl aliases
+# -----------------------
+
+alias k='kubectl'
+alias kg='kubectl get'
+alias kd='kubectl get deployment'
+alias kp='kubectl get pods'
+alias kr='kubectl rollout restart'
+alias kc='kubectl config get-contexts'
+alias kcc='kubectl config use-context'
+
+function ksh(){ kubectl exec --stdin --tty $1 -- /bin/bash }

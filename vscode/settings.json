@@ -1,203 +1,199 @@
 {
-    "markdown.marp.enableHtml": true,
-    "workbench.colorTheme": "Monokai",
-    "window.titleBarStyle": "custom",
-    "window.customMenuBarAltFocus": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-    "editor.minimap.enabled": false,
-    "yaml.schemas": {
-        "file:///home/a337521/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  "markdown.marp.enableHtml": true,
+  "workbench.colorTheme": "Monokai",
+  "window.titleBarStyle": "custom",
+  "window.customMenuBarAltFocus": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.minimap.enabled": false,
+  "yaml.schemas": {
+    "file:///home/rikard/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.jira.enabled": true,
+  "atlascode.bitbucket.enabled": true,
+  "git.autofetch": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "workbench.editor.closeOnFileDelete": true,
+  "editor.rename.enablePreview": false,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk 🔃",
+      "tools": ["latexmk"]
     },
-    "atlascode.jira.enabled": true,
-    "atlascode.bitbucket.enabled": true,
-    "atlascode.jira.jqlList": [
-        {
-            "id": "6034e30e-3c9d-4c70-b95e-531d9ddec88e",
-            "enabled": true,
-            "name": "My jira.srv.volvo.com Issues",
-            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
-            "siteId": "jira.srv.volvo.com",
-            "monitor": true
-        }
-    ],
-    "git.autofetch": true,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+    {
+      "name": "latexmk (latexmkrc)",
+      "tools": ["latexmk_rconly"]
     },
-    "workbench.editor.closeOnFileDelete": true,
-    "editor.rename.enablePreview": false,
-    "atlascode.jira.lastCreateSiteAndProject": {
-        "siteId": "jira.srv.volvo.com",
-        "projectKey": "BPIR"
+    {
+      "name": "latexmk (lualatex)",
+      "tools": ["lualatexmk"]
     },
-    "[cpp]": {
-        "editor.defaultFormatter": "xaver.clang-format"
+    {
+      "name": "pdflatex",
+      "tools": ["pdflatex"]
     },
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.autoClean.run": "onBuilt",
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "latexmk 🔃",
-            "tools": [
-                "latexmk"
-            ]
-        },
-        {
-            "name": "latexmk (latexmkrc)",
-            "tools": [
-                "latexmk_rconly"
-            ]
-        },
-        {
-            "name": "latexmk (lualatex)",
-            "tools": [
-                "lualatexmk"
-            ]
-        },
-        {
-            "name": "pdflatex",
-            "tools": [
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "Compile Rnw files",
-            "tools": [
-                "rnw2tex",
-                "latexmk"
-            ]
-        },
-        {
-            "name": "Compile Jnw files",
-            "tools": [
-                "jnw2tex",
-                "latexmk"
-            ]
-        },
-        {
-            "name": "tectonic",
-            "tools": [
-                "tectonic"
-            ]
-        }
-    ],
-    "latex-workshop.latex.tools": [
-        {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "-outdir=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "lualatexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-lualatex",
-                "-outdir=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "latexmk_rconly",
-            "command": "latexmk",
-            "args": [
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "rnw2tex",
-            "command": "Rscript",
-            "args": [
-                "-e",
-                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
-            ],
-            "env": {}
-        },
-        {
-            "name": "jnw2tex",
-            "command": "julia",
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
-            ],
-            "env": {}
-        },
-        {
-            "name": "jnw2texmintex",
-            "command": "julia",
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
-            ],
-            "env": {}
-        },
-        {
-            "name": "tectonic",
-            "command": "tectonic",
-            "args": [
-                "--synctex",
-                "--keep-logs",
-                "%DOC%.tex"
-            ],
-            "env": {}
-        }
-    ],
-    "gitlens.views.branches.branches.layout": "list",
-    "editor.formatOnType": true,
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
+    {
+      "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     },
-    "jupyter.askForKernelRestart": false,
-    "jupyter.alwaysTrustNotebooks": true,
-    "gitlab.instanceUrl": "https://vas-gitlab.ess.volvo.net",
-    "editor.renderWhitespace": "all",
-    "files.watcherExclude": {
-        "**/__pycache__/**": true,
-        "**/.ipynb_checkpoints/**": true,
-        "**/.mypy_cache/**": true,
-        "**/.pytest_cache/**": true,
-        "**/.venv/**": true
+    {
+      "name": "Compile Rnw files",
+      "tools": ["rnw2tex", "latexmk"]
+    },
+    {
+      "name": "Compile Jnw files",
+      "tools": ["jnw2tex", "latexmk"]
+    },
+    {
+      "name": "tectonic",
+      "tools": ["tectonic"]
     }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "lualatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-lualatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "latexmk_rconly",
+      "command": "latexmk",
+      "args": ["%DOC%"],
+      "env": {}
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"],
+      "env": {}
+    },
+    {
+      "name": "rnw2tex",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+      ],
+      "env": {}
+    },
+    {
+      "name": "jnw2tex",
+      "command": "julia",
+      "args": ["-e", "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"],
+      "env": {}
+    },
+    {
+      "name": "jnw2texmintex",
+      "command": "julia",
+      "args": [
+        "-e",
+        "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+      ],
+      "env": {}
+    },
+    {
+      "name": "tectonic",
+      "command": "tectonic",
+      "args": ["--synctex", "--keep-logs", "%DOC%.tex"],
+      "env": {}
+    }
+  ],
+  "gitlens.views.branches.branches.layout": "list",
+  "editor.formatOnType": true,
+  "jupyter.askForKernelRestart": false,
+  "jupyter.alwaysTrustNotebooks": true,
+  "gitlab.instanceUrl": "https://vas-gitlab.ess.volvo.net",
+  "editor.renderWhitespace": "all",
+  "files.watcherExclude": {
+    "**/__pycache__/**": true,
+    "**/.ipynb_checkpoints/**": true,
+    "**/.mypy_cache/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.venv/**": true
+  },
+  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+  "files.insertFinalNewline": true,
+  "markdownlint.run": "onSave",
+  "gitlens.hovers.currentLine.over": "line",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "latex-workshop.linting.chktex.enabled": true,
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "yaml.customTags": [],
+  "atlascode.jira.explorer.enabled": true,
+  "atlascode.bitbucket.explorer.enabled": false,
+  "atlascode.bitbucket.statusbar.enabled": false,
+  "atlascode.bitbucket.contextMenus.enabled": false,
+  "atlascode.bitbucket.issues.explorerEnabled": false,
+  "atlascode.bitbucket.pipelines.explorerEnabled": false,
+  "atlascode.jira.startWorkBranchTemplate.customPrefixes": [
+    "feature",
+    "bugfix"
+  ],
+  "atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}/{{{issueKey}}}-{{{summary}}}",
+  "vscode-kubernetes.log-viewer.follow": true,
+  "vscode-kubernetes.log-viewer.timestamp": false,
+  "vscode-kubernetes.log-viewer.since": -1,
+  "vscode-kubernetes.log-viewer.tail": -1,
+  "vscode-kubernetes.log-viewer.destination": "Webview",
+  "vscode-kubernetes.log-viewer.wrap": false,
+
+  "atlascode.jira.jqlList": [
+    {
+      "id": "3d52384f-91df-4d87-a9a7-43585f08c747",
+      "siteId": "jira.srv.volvo.com",
+      "name": "My issues",
+      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+      "enabled": true,
+      "monitor": true
+    },
+    {
+      "id": "87fb738b-b146-4301-9ce5-faa8435751a1",
+      "siteId": "jira.srv.volvo.com",
+      "name": "Mappster current sprint",
+      "query": "project = VASPL AND labels in (Mappster, mappster) AND resolution = Unresolved AND sprint IN openSprints()",
+      "enabled": true,
+      "monitor": true
+    }
+  ],
+  "vs-kubernetes": {
+    "vscode-kubernetes.helm-path-linux": "/home/rikard/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
+    "vscode-kubernetes.enable-snap-flag": true
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false
 }
