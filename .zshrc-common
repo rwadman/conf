@@ -52,9 +52,14 @@ function glf() { git log --all --grep="$1"; }
 # -----------------------
 
 alias k='kubectl'
+alias kl='kubectl logs'
 alias kg='kubectl get'
 alias kd='kubectl get deployment'
 alias kp='kubectl get pods'
+alias ksv='kubectl get services'
+alias ki='kubectl get ingress'
+alias kgc='kubectl get configmap'
+alias ksc='kubectl get secret'
 alias kr='kubectl rollout restart'
 alias kc='kubectl config get-contexts'
 alias kcc='kubectl config use-context'
