@@ -39,6 +39,7 @@ alias grsm='git reset --soft origin/master'
 alias gs='git status'
 alias gss='git status --short'
 alias gst='git stash'
+alias gsh='git show'
 
 
 # ----------------------
