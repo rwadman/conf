@@ -7,7 +7,7 @@
   "files.trimTrailingWhitespace": true,
   "editor.minimap.enabled": false,
   "yaml.schemas": {
-    "file:///home/rikard/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/rikard/.vscode/extensions/atlassian.atlascode-3.4.17/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.jira.enabled": true,
   "atlascode.bitbucket.enabled": true,
@@ -172,7 +172,6 @@
   "vscode-kubernetes.log-viewer.tail": -1,
   "vscode-kubernetes.log-viewer.destination": "Webview",
   "vscode-kubernetes.log-viewer.wrap": false,
-
   "atlascode.jira.jqlList": [
     {
       "id": "3d52384f-91df-4d87-a9a7-43585f08c747",
@@ -186,7 +185,15 @@
       "id": "87fb738b-b146-4301-9ce5-faa8435751a1",
       "siteId": "jira.srv.volvo.com",
       "name": "Mappster current sprint",
-      "query": "project = VASPL AND labels in (Mappster, mappster) AND resolution = Unresolved AND sprint IN openSprints()",
+      "query": "project = VASPL AND team = 7827 AND resolution = Unresolved AND sprint IN openSprints()",
+      "enabled": true,
+      "monitor": true
+    },
+    {
+      "id": "87fb738b-b146-4301-9ce5-faa8435751a1",
+      "siteId": "jira.srv.volvo.com",
+      "name": "Mappster backlog",
+      "query": "project = VASPL AND team = 7827 and resolution = Unresolved and status in (Backlog, Open)",
       "enabled": true,
       "monitor": true
     }
@@ -195,5 +202,38 @@
     "vscode-kubernetes.helm-path-linux": "/home/rikard/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
     "vscode-kubernetes.enable-snap-flag": true
   },
-  "terminal.integrated.enableMultiLinePasteWarning": false
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "hediet.vscode-drawio.resizeImages": null,
+  "evenBetterToml.rules": [],
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "Cargo.toml": "Cargo.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "rust-analyzer.testExplorer": true,
+  "coverage-gutters.coverageFileNames": [
+    ".coverage-libs-rust",
+    "lcov.info",
+    "cov.xml",
+    "coverage.xml",
+    "cobertura.xml",
+    "jacoco.xml",
+    "coverage.cobertura.xml"
+  ],
+  "hediet.vscode-drawio.theme": "Kennedy",
+  "sqltools.useNodeRuntime": true,
+  "window.confirmSaveUntitledWorkspace": false
 }

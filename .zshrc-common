@@ -5,6 +5,8 @@ export EDITOR="$VISUAL"
 export MAPPSTER_GIT_TOP="$HOME/repos/mappster"
 export BMAPS_GIT_TOP="$APM_GIT_TOP/map_folder"
 export SITE_CONFIG_GIT_TOP="$HOME/repos/site-configurations"
+export RUSTC_BOOTSTRAP=1
+
 alias mpsh="source $MAPPSTER_GIT_TOP/.venv/bin/activate"
 alias bmaps="mpsh && cd $BMAPS_GIT_TOP"
 alias mp="mpsh && cd $MAPPSTER_GIT_TOP"
@@ -67,3 +69,4 @@ alias kc='kubectl config get-contexts'
 alias kcc='kubectl config use-context'
 
 function ksh(){ kubectl exec --stdin --tty $1 -- /bin/bash }
+
