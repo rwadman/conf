@@ -57,7 +57,7 @@ font-2 = Wuncon Siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = backlight cpu memory pulseaudio xkeyboard battery date
+modules-right = backlight pulseaudio xkeyboard cpu memory battery date
 
 tray-position = right
 tray-padding = 2
@@ -263,8 +263,8 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date = " %Y-%m-%d"
+date-alt =
 
 time = %H:%M
 time-alt = %H:%M:%S
