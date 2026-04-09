@@ -154,7 +154,7 @@ exec xrandr --setprovideroutputsource modesetting NVIDIA-0
 exec xrandr --dpi 100
 exec --no-startup-id xhost +local:root
 
-exec_always --no-startup-id setxkbmap us,se -option grp:caps_toggle -model pc105
+exec_always --no-startup-id sleep 2 && setxkbmap us,se -option grp:caps_toggle -model pc105
 
 bindsym Print exec scrot 'Screenshot\ from\ %Y-%m-%d %H-%M-%S.jpg' -e 'mv "$f" ~/Pictures/'
 bindsym Control+Print exec gnome-screenshot -i
