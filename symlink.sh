@@ -20,3 +20,7 @@ ln -sf "${HOME}/repos/conf/i3/config" "${HOME}/.config/i3/config"
 # Symlink helper scripts to ~/.i3/
 mkdir -p "${HOME}/.i3"
 ln -sf "${HOME}/repos/conf/i3/polybar.sh" "${HOME}/.i3/polybar.sh"
+
+# Polybar:
+mkdir -p "${HOME}/.config/polybar"
+ln -sf "${HOME}/repos/conf/polybar/config" "${HOME}/.config/polybar/config"
